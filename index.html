@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bachir Drame - Expert Communication Multimédia & Création Digitale</title>
+  <meta name="description" content="Bachir Drame, expert en communication digitale, montage audiovisuel, design graphique et création de sites WordPress. Découvrez mon portfolio et mes services.">
+  <meta name="keywords" content="Bachir Drame, communication multimédia, montage vidéo, design graphique, WordPress, portfolio, Sénégal, création de sites web, stratégie digitale">
+  <meta name="author" content="Bachir Drame">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bachirdrame.com/">
+  <meta property="og:title" content="Bachir Drame - Expert Communication Multimédia & Création Digitale">
+  <meta property="og:description" content="Spécialiste en communication digitale, montage vidéo, design graphique et création de sites WordPress.">
+  <meta property="og:image" content="https://bachirdrame.com/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://bachirdrame.com/">
+  <meta property="twitter:title" content="Bachir Drame - Expert Communication Multimédia">
+  <meta property="twitter:description" content="Spécialiste en communication digitale, montage vidéo, design graphique et création de sites WordPress.">
+  <meta property="twitter:image" content="https://bachirdrame.com/images/twitter-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🎬</text></svg>'>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #3498db;
+      --secondary: #2c3e50;
+      --accent: #e74c3c;
+      --light: #f6f8fb;
+      --dark: #333333;
+      --muted: #6b7280;
+      --radius: 14px;
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+      --shadow-sm: 0 6px 14px rgba(0,0,0,.06);
+      --transition: .3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--secondary);
+      margin: 0 0 1rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: #1d7fc3;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+      padding: 0 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 0.9rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #2f89c5;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 1px solid #eef2f7;
+      box-shadow: 0 2px 8px rgba(0,0,0,.03);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 700;
+      color: var(--secondary);
+      font-size: 1.2rem;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-menu a {
+      color: #111827;
+      font-weight: 600;
+      padding: 0.5rem 0.8rem;
+      border-radius: 10px;
+    }
+
+    .nav-menu a:hover {
+      background: #eff6ff;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--secondary);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(140deg, #f5f7fa 0%, #dbeafe 40%, #e9f1ff 100%);
+      padding: 100px 0 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero .profile {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1.5rem;
+      border: 6px solid #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-weight: 600;
+      margin: 0.4rem 0 1.5rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 1rem;
+    }
+
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 999px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .badges {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .badge {
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .skill {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .skill h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: #0f3a5d;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill ul {
+      list-style: none;
+      margin-bottom: 1.2rem;
+    }
+
+    .skill li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .skill li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      margin-top: 1.2rem;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #eef2f7;
+    }
+
+    .track {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+      will-change: transform;
+    }
+
+    .track img {
+      width: 130px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+      background: #fff;
+      flex: 0 0 auto;
+    }
+
+    .car-controls {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .car-btn {
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #e5e7eb;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      margin: 0 8px;
+      cursor: pointer;
+      transition: transform var(--transition);
+    }
+
+    .car-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .line {
+      position: absolute;
+      left: calc(50% - 2px);
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #e5e7eb;
+    }
+
+    .item {
+      position: relative;
+      width: 50%;
+      padding: 0 26px 32px;
+    }
+
+    .item::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border: 4px solid var(--primary);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      left: 100%;
+    }
+
+    .item .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .item.left::before {
+      left: 100%;
+    }
+
+    .item.right {
+      left: 50%;
+    }
+
+    .date {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Portfolio */
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .filter {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .filter.active, .filter:hover {
+      background: #e9f5ff;
+      border-color: #cde7ff;
+      color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      height: 250px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      background: #fff;
+      transition: transform var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.08);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: linear-gradient(to top, rgba(15,23,42,0.75), rgba(15,23,42,0) 70%);
+      color: #fff;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay h4 {
+      margin: 0;
+      font-family: 'Poppins';
+      font-size: 1.2rem;
+    }
+
+    .overlay p {
+      margin: 0.3rem 0 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 16px;
+    }
+
+    .info {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #eef2f7;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition);
+    }
+
+    .info:hover {
+      transform: translateY(-3px);
+    }
+
+    .info .ico {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      background: #e9f5ff;
+      color: #0f3a5d;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .form {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .form .row {
+      margin-bottom: 16px;
+    }
+
+    .form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .form input, .form textarea {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      padding: 14px;
+      border-radius: 12px;
+      font: inherit;
+      font-size: 16px;
+      transition: border-color var(--transition);
+    }
+
+    .form input:focus, .form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    }
+
+    .form textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .form .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .form-message {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .form-message.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .form-message.success {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .form-message.error {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: #fff;
+      padding: 60px 0 30px;
+    }
+
+    .fgrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .social {
+      display: flex;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .social a {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+
+    .social a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .rights {
+      margin-top: 30px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      color: #e5e7eb;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .item.left, .item.right {
+        left: 0;
+        width: 100%;
+        text-align: left;
+      }
+      
+      .line {
+        left: 12px;
+      }
+      
+      .item::before {
+        left: 12px;
+        transform: none;
+      }
+      
+      .fgrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      .hero {
+        padding: 80px 0 50px;
+      }
+      
+      section {
+        padding: 50px 0;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        top: 70px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background: #fff;
+        padding: 30px 20px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+      }
+      
+      .nav-menu.show {
+        right: 0;
+      }
+      
+      .hamburger {
+        display: block;
+        z-index: 1001;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .card {
+        height: 280px;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .form .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .form .actions .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: center;
+      }
+      
+      .fgrid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      
+      .social {
+        justify-content: center;
+      }
+      
+      .hero .cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .hero .cta .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+      
+      .about-img {
+        margin-top: 30px;
+      }
+      
+      .filters {
+        gap: 10px;
+      }
+      
+      .filter {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand span {
+        font-size: 1.1rem;
+      }
+      
+      .hero .profile {
+        width: 160px;
+        height: 160px;
+      }
+      
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .about-card {
+        padding: 24px;
+      }
+      
+      .skill {
+        padding: 20px;
+      }
+      
+      .track img {
+        width: 110px;
+        height: 80px;
+      }
+      
+      .info {
+        padding: 16px;
+      }
+      
+      .info .ico {
+        width: 44px;
+        height: 44px;
+      }
+      
+      .form {
+        padding: 24px;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="container nav" aria-label="Navigation principale">
+      <a href="#accueil" class="brand">
+        <img src="monlogo.jpg" alt="Logo Bachir Drame" loading="lazy">
+        <span>Bachir<span style="color:var(--primary)">Drame</span></span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-outline" href="cv.pdf" target="_blank" rel="noopener">Télécharger mon CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="accueil">
+    <div class="container">
+      <img class="profile" src="maphoto.jpg" alt="Photo de profil de Bachir Drame" loading="eager">
+      <h1>Bachir Drame</h1>
+      <p>Expert en Communication Multimédia & Technologies Numériques</p>
+      <div class="cta">
+        <a href="#portfolio" class="btn"><i class="fa-solid fa-images"></i> Voir mon portfolio</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="a-propos">
+    <div class="container">
+      <div class="section-title">
+        <h2>À propos de moi</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Passionné par les médias et la communication digitale</h3>
+          <p>Je suis étudiant en Licence 3 Communication, parcours Communication multimédia et technologies numériques à l'Université Gaston Berger de Saint-Louis. Passionné par les médias et doté d'une première expérience en radio, je possède des compétences en montage audiovisuel, design graphique et communication digitale.</p>
+          <p>Mon objectif est de contribuer aux projets multimédias et audiovisuels, tout en consolidant mon savoir-faire dans un environnement professionnel exigeant.</p>
+          <p>Curieux, créatif et toujours à la recherche de nouveaux défis, je souhaite mettre mes compétences au service de projets innovants dans le domaine de la communication digitale.</p>
+          <div class="badges">
+            <span class="badge">Audiovisuel</span>
+            <span class="badge">Infographie</span>
+            <span class="badge">WordPress</span>
+            <span class="badge">Radio</span>
+            <span class="badge">Stratégie digitale</span>
+          </div>
+          <div style="margin-top:20px">
+            <a href="#contact" class="btn"><i class="fa-solid fa-handshake"></i> Travaillons ensemble</a>
+          </div>
+        </div>
+        <div class="about-img">
+          <img src="imagepresentationradio.jpg" alt="Illustration communication et radio" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills with carousels -->
+  <section id="competences">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mes compétences</h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Relation Presse -->
+        <article class="skill">
+          <h3><i class="fas fa-newspaper"></i> Relation Presse</h3>
+          <ul>
+            <li>Rédiger un communiqué de presse</li>
+            <li>Organiser une conférence de presse</li>
+            <li>Concevoir un pressbook</li>
+          </ul>
+          <div class="carousel" data-speed="0.35">
+            <div class="track">
+              <img src="rédactionjournal.jpg" alt="Rédaction de journal" loading="lazy">
+              <img src="présentation_journalbakefm.jpg" alt="Présentation du journal à l'antenne" loading="lazy">
+              <img src="photo_technicien_bakelfm.jpg" alt="Prise de son en studio" loading="lazy">
+            </div>
+            <div class="car-controls">
+              <button class="car-btn prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="car-btn next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Plan & Audit -->
+        <article class="skill">
+          <h3><i class="fas fa-chart-line"></i> Plan & Audit de Communication</h3>
+          <ul>
+            <li>Élaborer et exécuter un plan de communication</li>
+            <li>Audit interne & externe</li>
+            <li>Note de synthèse</li>
+            <li>Prise de parole en public</li>
+          </ul>
+          <div class="carousel" data-speed="0.4">
+            <div class="track">
+              <img src="affichecampagne.png" alt="Visuel de campagne" loading="lazy">
+              <img src="affiche.jpg" alt="Affiche publicitaire" loading="lazy">
+              <img src="afficheillustrator.jpg" alt="Affiche réalisée sur Illustrator" loading="lazy">
+              <img src="conception affiche.jpg" alt="Conception d'affiche" loading="lazy">
+            </div>
+            <div class="car-controls">
+              <button class="car-btn prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="car-btn next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Infographie -->
+        <article class="skill">
+          <h3><i class="fas fa-paint-brush"></i> Infographie</h3>
+          <ul>
+            <li>Photoshop • Illustrator • InDesign</li>
+            <li>Montage vidéo • Premiere Pro</li>
+            <li>Traitement de son • Audition</li>
+          </ul>
+          <div class="carousel" data-speed="0.45">
+            <div class="track">
+              <img src="Photoshop.jpg" alt="Logo Photoshop" loading="lazy">
+              <img src="Illustrator.jpg" alt="Logo Illustrator" loading="lazy">
+              <img src="indisign.jpg" alt="Logo InDesign" loading="lazy">
+              <img src="premièrepro.jpg" alt="Logo Premiere Pro" loading="lazy">
+              <img src="afficheillustrator.jpg" alt="Exemple d'affiche Illustrator" loading="lazy">
+            </div>
+            <div class="car-controls">
+              <button class="car-btn prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="car-btn next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Webmastering -->
+        <article class="skill">
+          <h3><i class="fas fa-laptop-code"></i> Webmastering</h3>
+          <ul>
+            <li>Création de pages avec WordPress</li>
+            <li>Extensions : Elementor, All in One, Big File</li>
+            <li>HTML & CSS</li>
+          </ul>
+          <div class="carousel" data-speed="0.38">
+            <div class="track">
+              <img src="iconworpress.jpg" alt="Icône WordPress" loading="lazy">
+              <img src="capturedecrandesite.png" alt="Capture d'écran d'un site" loading="lazy">
+              <img src="iconworpress.jpg" alt="Icône WordPress (variante)" loading="lazy">
+              <img src="monlogo.jpg" alt="Logo personnel" loading="lazy">
+            </div>
+            <div class="car-controls">
+              <button class="car-btn prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="car-btn next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Informatique -->
+        <article class="skill">
+          <h3><i class="fas fa-desktop"></i> Informatique</h3>
+          <ul>
+            <li>Excel : tableaux, graphiques, bases</li>
+            <li>Word : mise en page avancée</li>
+          </ul>
+          <div class="carousel" data-speed="0.32">
+            <div class="track">
+              <img src="capturedecrandesite.png" alt="Exemple de tableau/graphique" loading="lazy">
+              <img src="monlogo.jpg" alt="Logo personnel" loading="lazy">
+            </div>
+            <div class="car-controls">
+              <button class="car-btn prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="car-btn next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Langues -->
+        <article class="skill">
+          <h3><i class="fas fa-language"></i> Langues</h3>
+          <ul>
+            <li>Français : pratique professionnelle</li>
+            <li>Anglais : pratique régulière</li>
+            <li>Wolof : pratique professionnelle</li>
+            <li>Soninké : langue maternelle</li>
+          </ul>
+          <div class="carousel" data-speed="0.3">
+            <div class="track">
+              <img src="monlogo.jpg" alt="Marque personnelle" loading="lazy">
+            </div>
+            <div class="car-controls">
+              <button class="car-btn prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="car-btn next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="parcours">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mon parcours</h2>
+      </div>
+      <div class="timeline">
+        <div class="line" aria-hidden="true"></div>
+
+        <div class="item left">
+          <div class="card">
+            <div class="date">2024 - 2025</div>
+            <h3>Licence 3 Communication</h3>
+            <p>Université Gaston Berger de Saint-Louis</p>
+            <p>Parcours Communication multimédia et technologies numériques</p>
+          </div>
+        </div>
+
+        <div class="item right">
+          <div class="card">
+            <div class="date">2023 - 2024</div>
+            <h3>Licence 2 Communication</h3>
+            <p>Université Gaston Berger Saint-Louis</p>
+            <p>Mention Assez Bien</p>
+          </div>
+        </div>
+
+        <div class="item left">
+          <div class="card">
+            <div class="date">2022 - 2023</div>
+            <h3>Licence 1 Communication</h3>
+            <p>Université Gaston Berger de Saint-Louis</p>
+            <p>Mention Assez Bien</p>
+          </div>
+        </div>
+
+        <div class="item right">
+          <div class="card">
+            <div class="date">2021 - 2022</div>
+            <h3>Baccalauréat SHS (Série L2)</h3>
+            <p>Lycée de Diawara</p>
+          </div>
+        </div>
+
+        <div class="item left">
+          <div class="card">
+            <div class="date">2019</div>
+            <h3>Brevet de Fin d'Études Moyennes (BFEM)</h3>
+            <p>Collège de Diawara</p>
+          </div>
+        </div>
+
+        <div class="item right">
+          <div class="card">
+            <div class="date">Sept - Oct 2024</div>
+            <h3>Stage en production radiophonique polyvalent</h3>
+            <p>1 mois d'expérience en radio</p>
+            <ul>
+              <li>Reportage terrain</li>
+              <li>Rédaction du journal quotidien</li>
+              <li>Technique & traitement du son</li>
+              <li>Présentation du journal & animation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mon portfolio</h2>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Filtres du portfolio">
+        <button class="filter active" data-filter="all" role="tab">Tous</button>
+        <button class="filter" data-filter="infographie" role="tab">Infographie</button>
+        <button class="filter" data-filter="webmastering" role="tab">Webmastering</button>
+        <button class="filter" data-filter="radio" role="tab">Radio</button>
+        <button class="filter" data-filter="presse" role="tab">Presse</button>
+        <button class="filter" data-filter="video" role="tab">Vidéo</button>
+      </div>
+
+      <div class="grid" id="portfolioGrid">
+        <!-- Infographie -->
+        <figure class="card" data-category="infographie">
+          <img src="affiche.jpg" alt="Affiche publicitaire (Infographie)" loading="lazy">
+          <figcaption class="overlay"><h4>Affiche publicitaire</h4><p>Photoshop & Illustrator</p></figcaption>
+        </figure>
+        <figure class="card" data-category="infographie">
+          <img src="afficheillustrator.jpg" alt="Affiche réalisée sur Illustrator" loading="lazy">
+          <figcaption class="overlay"><h4>Affiche Illustrator</h4><p>Direction artistique</p></figcaption>
+        </figure>
+        <figure class="card" data-category="infographie">
+          <img src="conception affiche.jpg" alt="Conception d'affiche (campagne)" loading="lazy">
+          <figcaption class="overlay"><h4>Conception d'affiche</h4><p>Campagne de communication</p></figcaption>
+        </figure>
+        <figure class="card" data-category="infographie">
+          <img src="affichecampagne.png" alt="Visuel de campagne" loading="lazy">
+          <figcaption class="overlay"><h4>Visuel de campagne</h4><p>Message & impact</p></figcaption>
+        </figure>
+        <figure class="card" data-category="infographie">
+          <img src="indisign.jpg" alt="Mise en page sur InDesign" loading="lazy">
+          <figcaption class="overlay"><h4>Mise en page magazine</h4><p>InDesign</p></figcaption>
+        </figure>
+
+        <!-- Webmastering -->
+        <figure class="card" data-category="webmastering">
+          <img src="capturedecrandesite.png" alt="Capture de site WordPress" loading="lazy">
+          <figcaption class="overlay"><h4>Site WordPress</h4><p>Création & intégration</p></figcaption>
+        </figure>
+        <figure class="card" data-category="webmastering">
+          <img src="iconworpress.jpg" alt="Icône WordPress" loading="lazy">
+          <figcaption class="overlay"><h4>WordPress</h4><p>Thèmes & extensions</p></figcaption>
+        </figure>
+
+        <!-- Radio -->
+        <figure class="card" data-category="radio">
+          <img src="imagepresentationradio.jpg" alt="Présentation d'émission radio" loading="lazy">
+          <figcaption class="overlay"><h4>Émission Radio</h4><p>Production & animation</p></figcaption>
+        </figure>
+        <figure class="card" data-category="radio">
+          <img src="photo_technicien_bakelfm.jpg" alt="Technicien son à Bakel FM" loading="lazy">
+          <figcaption class="overlay"><h4>Technique & Son</h4><p>Prises & mix</p></figcaption>
+        </figure>
+        <figure class="card" data-category="radio">
+          <img src="présentation_journalbakefm.jpg" alt="Présentation du journal à Bakel FM" loading="lazy">
+          <figcaption class="overlay"><h4>Journal à l'antenne</h4><p>Présentation & rédaction</p></figcaption>
+        </figure>
+
+        <!-- Presse -->
+        <figure class="card" data-category="presse">
+          <img src="rédactionjournal.jpg" alt="Rédaction du journal" loading="lazy">
+          <figcaption class="overlay"><h4>Rédaction de journal</h4><p>Relation presse</p></figcaption>
+        </figure>
+
+        <!-- Vidéo -->
+        <figure class="card" data-category="video">
+          <img src="premièrepro.jpg" alt="Montage vidéo sur Premiere Pro" loading="lazy">
+          <figcaption class="overlay"><h4>Montage vidéo</h4><p>Premiere Pro</p></figcaption>
+        </figure>
+
+        <!-- Identité -->
+        <figure class="card" data-category="infographie">
+          <img src="monlogo.jpg" alt="Logo personnel Bachir Drame" loading="lazy">
+          <figcaption class="overlay"><h4>Identité visuelle</h4><p>Monogramme</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contactez-moi</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info">
+            <div class="ico"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4 style="margin:0">Téléphone</h4>
+              <p style="margin:.2rem 0 0">77 256 97 00</p>
+            </div>
+          </div>
+          <div class="info">
+            <div class="ico"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4 style="margin:0">Email</h4>
+              <p style="margin:.2rem 0 0">drame.bachir@ugb.edu.sn</p>
+            </div>
+          </div>
+          <div class="info">
+            <div class="ico"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4 style="margin:0">Adresse</h4>
+              <p style="margin:.2rem 0 0">Dakar, Keur Massar</p>
+            </div>
+          </div>
+          <div class="info">
+            <div class="ico"><i class="fas fa-globe"></i></div>
+            <div>
+              <h4 style="margin:0">Langues</h4>
+              <p style="margin:.2rem 0 0">Français, Anglais, Wolof, Soninké</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="form" id="contactForm" novalidate>
+          <div class="row">
+            <label for="name">Nom complet</label>
+            <input id="name" name="name" type="text" placeholder="Votre nom" required />
+          </div>
+          <div class="row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="adresse@email.com" required />
+          </div>
+          <div class="row">
+            <label for="subject">Sujet</label>
+            <input id="subject" name="subject" type="text" placeholder="Sujet de votre message" required />
+          </div>
+          <div class="row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn" id="submitBtn">
+              <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+            </button>
+            <a class="btn btn-outline" href="cv.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-file-pdf"></i> Voir mon CV
+            </a>
+          </div>
+
+          <div id="form-message" class="form-message" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="fgrid">
+        <div>
+          <h3 style="margin-top:0">Bachir Drame</h3>
+          <p>Étudiant en communication multimédia et technologies numériques, passionné par les médias et la création digitale.</p>
+          <div class="social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-top:0">Liens rapides</h3>
+          <p><a href="#accueil">Accueil</a> · <a href="#a-propos">À propos</a> · <a href="#competences">Compétences</a> · <a href="#parcours">Parcours</a> · <a href="#portfolio">Portfolio</a> · <a href="#contact">Contact</a></p>
+        </div>
+        <div>
+          <h3 style="margin-top:0">Compétences</h3>
+          <p>Design Graphique · Montage Vidéo · WordPress · Production Radio · Communication Digitale</p>
+        </div>
+      </div>
+      <div class="rights">&copy; 2024 Bachir Drame. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <!-- Charger EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <script>
+    // Initialiser EmailJS avec votre Public Key
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Remplacez par votre clé publique EmailJS
+    })();
+
+    // ----- Navigation -----
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    hamburger?.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+      const icon = hamburger.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+    
+    // Fermer le menu en cliquant à l'extérieur
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        const icon = hamburger.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      }
+    });
+
+    // Fermer le menu en cliquant sur un lien
+    document.querySelectorAll('.nav-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        const icon = hamburger.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+
+    // ----- Smooth scroll offset for sticky header -----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const id = anchor.getAttribute('href');
+        if (!id || id === "#") return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const top = el.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    // ----- Portfolio filters -----
+    const filters = document.querySelectorAll('.filter');
+    const cards = document.querySelectorAll('#portfolioGrid .card');
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          const show = f === 'all' || c.dataset.category === f;
+          c.style.display = show ? 'block' : 'none';
+        });
+      });
+    });
+
+    // ----- Form handling with EmailJS -----
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('form-message');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function showFormMessage(text, type = 'success') {
+      formMsg.textContent = text;
+      formMsg.className = 'form-message show ' + (type === 'success' ? 'success' : 'error');
+      // auto-hide
+      setTimeout(() => { formMsg.classList.remove('show'); }, 5000);
+    }
+
+    function setLoading(isLoading) {
+      if (isLoading) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loading"></span> Envoi en cours...';
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Envoyer le message';
+      }
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const subject = form.subject.value.trim();
+      const message = form.message.value.trim();
+
+   // Validation simple
+if (!name || !email || !subject || !message) {
+  showFormMessage("Merci de remplir tous les champs.", "error");
+  return;
+}
+
+// Validation email
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(email)) {
+  showFormMessage("Veuillez entrer une adresse email valide.", "error");
+  return;
+}
+
+setLoading(true);
+
+try {
+  // Envoi via EmailJS
+  const response = await emailjs.send(
+    'service_1owdvqk',      // Service Gmail
+    'template_xpdshyp',    // Template EmailJS
+    {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message,
+      to_email: 'drame.bachir@ugb.edu.sn'
+    },
+    'OPDZ0-rothKUDFabZ'    // Clé publique
+  );
+
+  if (response.status === 200) {
+    showFormMessage("Merci pour votre message, " + name + " ! Je vous répondrai très vite.", "success");
+    form.reset();
+  } else {
+    throw new Error("Erreur lors de l'envoi");
+  }
+} catch (error) {
+  console.error("Erreur:", error);
+  showFormMessage(
+    "Désolé, une erreur s'est produite. Veuillez réessayer ou me contacter directement à drame.bachir@ugb.edu.sn",
+    "error"
+  );
+} finally {
+  setLoading(false);
+}
+
+    });
+
+    // ----- Infinite carousels -----
+    class InfiniteCarousel {
+      constructor(root) {
+        this.root = root;
+        this.track = root.querySelector('.track');
+        this.speed = parseFloat(root.dataset.speed || '0.4');
+        this.offset = 0;
+        this.isHover = false;
+        this.init();
+      }
+      
+      init() {
+        // Cloner quelques éléments pour la boucle
+        const items = Array.from(this.track.children);
+        // Si peu d'images, dupliquer pour garnir
+        if (items.length < 5) {
+          items.forEach(n => this.track.appendChild(n.cloneNode(true)));
+        }
+        
+        // Contrôles
+        const prev = this.root.querySelector('.prev');
+        const next = this.root.querySelector('.next');
+        prev?.addEventListener('click', () => this.nudge(-150));
+        next?.addEventListener('click', () => this.nudge(150));
+        
+        this.root.addEventListener('mouseenter', () => this.isHover = true);
+        this.root.addEventListener('mouseleave', () => this.isHover = false);
+        
+        // Calcul largeur totale
+        this.totalWidth = Array.from(this.track.children).reduce((w, img) => w + img.getBoundingClientRect().width + 12, 0);
+        
+        // Boucle d'animation
+        requestAnimationFrame(() => this.loop());
+      }
+      
+      loop() {
+        if (!this.isHover) {
+          this.offset -= this.speed;
+          // Réinitialiser pour effet infini
+          if (Math.abs(this.offset) > this.totalWidth / 2) {
+            this.offset = 0;
+          }
+          this.track.style.transform = `translateX(${this.offset}px)`;
+        }
+        requestAnimationFrame(() => this.loop());
+      }
+      
+      nudge(px) {
+        this.offset += px;
+      }
+    }
+
+    document.querySelectorAll('.carousel').forEach(c => new InfiniteCarousel(c));
+  </script>
+</body>
+</html>
