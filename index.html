@@ -3,37 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bachir Dramé — Portfolio | Communication Multimédia & Technologies Numériques</title>
-  <meta name="description" content="Portfolio de Bachir Dramé, étudiant en communication multimédia et technologies numériques. Découvrez mes compétences et réalisations.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Portfolio - Bachir Drame</title>
+
+  <!-- Style interne -->
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --secondary: #f59e0b;
-      --dark: #1f2937;
-      --light: #f3f4f6;
-      --gray: #6b7280;
-      --light-gray: #e5e7eb;
-      --white: #ffffff;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
-      color: var(--dark);
-      background-color: var(--light);
+      background: #f9f9f9;
+      color: #333;
     }
 
-    .container {
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #444;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .projects a {
+      display: block;
+      color: #0066cc;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    button {
+      background: #222;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    footer {
+      text-align: center;
+      background: #222;
+      color: #fff;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Portfolio - Bachir Drame</h1>
+    <nav>
+      <a href="#about">À propos</a>
+      <a href="#skills">Compétences</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>À propos</h2>
+    <p>
+      Je m'appelle <strong>Bachir Drame</strong>, étudiant en communication à l’Université Gaston Berger de Saint-Louis.  
+      Je suis passionné par la <em>communication digitale</em>, le <em>multimédia</em> et le <em>développement web</em>.  
+      Mon objectif est de mettre mes compétences au service de projets créatifs et innovants.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Compétences</h2>
+    <div class="skills">
+      <div class="card"><h3>Communication Digitale</h3></div>
+      <div class="card"><h3>Stratégie de Communication</h3></div>
+      <div class="card"><h3>HTML & CSS</h3></div>
+      <div class="card"><h3>WordPress & Elementor</h3></div>
+      <div class="card"><h3>Gestion de Contenu</h3></div>
+      <div class="card"><h3>Veille Stratégique</h3></div>
+      <div class="card"><h3>Webmastering</h3></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projets réalisés</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Site Portfolio</h3>
+        <p>Un site personnel présentant mes compétences et réalisations.</p>
+        <a href="https://ton-site-portfolio.com" target="_blank">Voir le site</a>
+      </div>
+      <div class="card">
+        <h3>Site AEESS</h3>
+        <p>Site web pour l’Association des élèves et étudiants soninké.</p>
+        <a href="https://ton-site-aeess.com" target="_blank">Voir le site</a>
+      </div>
+      <div class="card">
+        <h3>Projet Multimédia</h3>
+        <p>Création de contenus digitaux et gestion de campagne.</p>
+        <a href="https://ton-projet-multimedia.com" target="_blank">Voir le site</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Votre nom" required>
+      <input type="email" name="user_email" placeholder="Votre email" required>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Bachir Drame - Tous droits réservés</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("service_1owdvqk"); // ⚠️ remplace par ton vrai public key EmailJS
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_1owdvqk", "template_xpdshyp", this)
+        .then(function() {
+          alert("Message envoyé avec succès !");
+        }, function(error) {
+          alert("Erreur lors de l'envoi : " + JSON.stringify(error));
+        });
+    });
+  </script>
+</body>
+</html>
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
