@@ -1,40 +1,835 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bachir Drame - Expert Communication Multimédia & Création Digitale</title>
-  <meta name="description" content="Bachir Drame, expert en communication digitale, montage audiovisuel, design graphique et création de sites WordPress. Découvrez mon portfolio et mes services.">
-  <meta name="keywords" content="Bachir Drame, communication multimédia, montage vidéo, design graphique, WordPress, portfolio, Sénégal, création de sites web, stratégie digitale">
-  <meta name="author" content="Bachir Drame">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bachir Dramé – Étudiant en Communication | Stratégie Digitale & Storytelling</title>
+<meta name="description" content="Portfolio de Bachir Dramé, étudiant en communication spécialisé en stratégie digitale et storytelling. Découvrez mes projets et compétences en communication.">
+<meta name="author" content="Bachir Dramé">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bachirdrame.com/">
-  <meta property="og:title" content="Bachir Drame - Expert Communication Multimédia & Création Digitale">
-  <meta property="og:description" content="Spécialiste en communication digitale, montage vidéo, design graphique et création de sites WordPress.">
-  <meta property="og:image" content="https://bachirdrame.com/images/og-image.jpg">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bachirdrame.com/">
+<meta property="og:title" content="Bachir Dramé – Portfolio Professionnel">
+<meta property="og:description" content="Étudiant en communication spécialisé en stratégie digitale et storytelling">
+<meta property="og:image" content="https://www.bachirdrame.com/images/og-image.jpg">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://bachirdrame.com/">
-  <meta property="twitter:title" content="Bachir Drame - Expert Communication Multimédia">
-  <meta property="twitter:description" content="Spécialiste en communication digitale, montage vidéo, design graphique et création de sites WordPress.">
-  <meta property="twitter:image" content="https://bachirdrame.com/images/twitter-image.jpg">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.bachirdrame.com/">
+<meta property="twitter:title" content="Bachir Dramé – Portfolio Professionnel">
+<meta property="twitter:description" content="Étudiant en communication spécialisé en stratégie digitale et storytelling">
+<meta property="twitter:image" content="https://www.bachirdrame.com/images/twitter-image.jpg">
 
-  <!-- Favicon -->
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🎬</text></svg>'>
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root {
+  --blue: #1e3a8a;
+  --blue-light: #3b82f6;
+  --blue-dark: #1e3a8a;
+  --pastel: #f3f4f6;
+  --white: #ffffff;
+  --gray: #4b5563;
+  --gray-light: #9ca3af;
+  --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  --radius: 0.75rem;
+  --gap: 1.5rem;
+  --transition: all 0.3s ease;
+}
 
-  <style>
-    :root {
-      --primary: #3498db;
-      --secondary: #2c3e50;
+* { 
+  box-sizing: border-box; 
+  margin:0; 
+  padding:0; 
+}
+
+body { 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+  background: var(--pastel); 
+  color: var(--gray); 
+  scroll-behavior: smooth; 
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--blue);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header & Navigation */
+header { 
+  position: sticky; 
+  top:0; 
+  background: var(--white); 
+  box-shadow:0 2px 5px rgba(0,0,0,0.1); 
+  z-index:50; 
+}
+
+nav { 
+  max-width: 1100px; 
+  margin:auto; 
+  padding:1rem; 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+}
+
+.nav-logo h1 { 
+  font-size:1.5rem; 
+  font-weight:bold; 
+  color: var(--blue); 
+}
+
+.nav-links { 
+  display: flex; 
+  list-style: none;
+}
+
+.nav-links a { 
+  margin-left:1.5rem; 
+  font-weight:600; 
+  color: var(--gray); 
+  position: relative; 
+  padding-bottom:3px; 
+  text-decoration: none;
+}
+
+.nav-links a::after {
+  content:""; 
+  position:absolute; 
+  left:0; 
+  bottom:0; 
+  width:0%; 
+  height:2px; 
+  background: var(--blue); 
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after, 
+.nav-links a.active::after { 
+  width:100%; 
+}
+
+.nav-links a:hover { 
+  color: var(--blue-light); 
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--blue);
+  margin: 5px 0;
+  transition: var(--transition);
+}
+
+/* Hero */
+.hero { 
+  display:grid; 
+  grid-template-columns:1fr; 
+  gap: var(--gap); 
+  max-width:1100px; 
+  margin:auto; 
+  align-items:center; 
+  padding:3rem 1rem; 
+  min-height: 80vh;
+}
+
+.hero-text h1 { 
+  font-size:2.5rem; 
+  color: var(--blue-dark); 
+  margin-bottom:1rem; 
+  line-height: 1.2;
+}
+
+.hero-text p { 
+  font-size:1.125rem; 
+  margin-bottom:1.5rem; 
+  color: var(--gray);
+}
+
+.hero-buttons { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Buttons */
+.btn { 
+  display:inline-flex; 
+  align-items: center;
+  justify-content: center;
+  padding:0.75rem 1.5rem; 
+  border-radius:var(--radius); 
+  font-weight:700; 
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn-primary { 
+  background:var(--blue); 
+  color: var(--white); 
+}
+
+.btn-primary:hover { 
+  background:var(--blue-light); 
+  transform:translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-outline { 
+  border:2px solid var(--blue); 
+  color:var(--blue); 
+  background:transparent; 
+}
+
+.btn-outline:hover { 
+  background:var(--blue); 
+  color: var(--white); 
+}
+
+/* Sections */
+section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--blue-dark);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--blue-light);
+  border-radius: 2px;
+}
+
+/* About */
+.about-content { 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.about-image {
+  flex: 0 0 250px;
+}
+
+.about-image img { 
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius:50%; 
+  object-fit:cover; 
+  box-shadow: var(--card-shadow);
+}
+
+.about-text { 
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+/* Skills */
+.skills-grid { 
+  display:grid; 
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); 
+  gap: var(--gap); 
+  margin-top:2rem; 
+}
+
+.skill-card { 
+  background: var(--white); 
+  padding:1.5rem; 
+  border-radius:var(--radius); 
+  text-align:center; 
+  box-shadow: var(--card-shadow); 
+  transition: var(--transition);
+  opacity:0; 
+  transform: translateY(40px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-card.active { 
+  opacity:1; 
+  transform: translateY(0); 
+  transition: all 0.8s ease-out; 
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--blue);
+}
+
+/* Works */
+.works-grid { 
+  display:grid; 
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); 
+  gap: var(--gap); 
+  margin-top:2rem; 
+}
+
+.work-card { 
+  background: var(--white); 
+  border-radius:var(--radius); 
+  box-shadow: var(--card-shadow); 
+  overflow:hidden; 
+  transition: var(--transition);
+  opacity:0; 
+  transform: translateY(40px); 
+}
+
+.work-card.active { 
+  opacity:1; 
+  transform: translateY(0); 
+  transition: all 0.8s ease-out; 
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.work-image {
+  width:100%; 
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.work-card:hover .work-image { 
+  transform:scale(1.05); 
+}
+
+.work-content {
+  padding: 1.5rem;
+}
+
+.work-card h3 { 
+  color: var(--blue-dark);
+  margin-bottom: 0.5rem;
+}
+
+.work-card p {
+  color: var(--gray);
+}
+
+/* Contact */
+.contact-card { 
+  background: var(--white); 
+  max-width:800px; 
+  margin:auto; 
+  border-radius:var(--radius); 
+  padding:2rem; 
+  box-shadow: var(--card-shadow); 
+  text-align:center; 
+}
+
+.contact-form { 
+  display:grid; 
+  gap:1.25rem; 
+  margin-top:1.5rem; 
+}
+
+.contact-form input, 
+.contact-form textarea { 
+  padding:0.75rem; 
+  border:1px solid var(--gray-light); 
+  border-radius:var(--radius); 
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+.contact-form button { 
+  background: var(--blue); 
+  color: var(--white); 
+  border:none; 
+  padding:0.75rem; 
+  border-radius:var(--radius); 
+  transition: var(--transition);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact-form button:hover { 
+  background: var(--blue-light); 
+}
+
+.contact-links { 
+  margin-top:1.5rem; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-links a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-links a:hover {
+  color: var(--blue-light);
+  text-decoration: underline;
+}
+
+/* Footer */
+footer { 
+  background: var(--blue); 
+  color: var(--white); 
+  text-align:center; 
+  padding:1.5rem; 
+  font-size:0.9rem; 
+  margin-top:3rem; 
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pastel: #1a202c;
+    --white: #2d3748;
+    --gray: #e2e8f0;
+    --gray-light: #a0aec0;
+    --blue-dark: #ebf8ff;
+  }
+  
+  body {
+    color: #e2e8f0;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 100;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links a {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-image {
+    margin: 0 auto;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .skills-grid,
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  
+  .btn, .menu-toggle {
+    display: none !important;
+  }
+  
+  .nav-links {
+    position: static;
+    display: block;
+  }
+  
+  .nav-links a {
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
+  
+  a::after {
+    content: " (" attr(href) ") ";
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+  
+  .hero, section {
+    page-break-inside: avoid;
+  }
+  
+  .work-card {
+    page-break-inside: avoid;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Skip link for accessibility -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="nav-logo">
+      <h1>Bachir Dramé</h1>
+    </div>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">À propos de Bachir</a></li>
+      <li><a href="#skills">Compétences clés</a></li>
+      <li><a href="#works">Projets et réalisations</a></li>
+      <li><a href="#contact">Contactez-moi</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bachir Dramé – Étudiant en communication, passionné de stratégie digitale & storytelling</h1>
+      <p>Je transforme les idées en messages percutants et innovants. Découvrez mon portfolio et mes projets en communication digitale, stratégie digitale et storytelling.</p>
+      <div class="hero-buttons">
+        <a href="#works" class="btn btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">À propos de Bachir Dramé</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="https://placehold.co/400x400/1e3a8a/FFFFFF?text=Bachir+Dramé" alt="Portrait professionnel de Bachir Dramé, étudiant en communication" width="400" height="400">
+      </div>
+      <div class="about-text">
+        <p>
+          Étudiant en Licence 3 Communication à l'Université Gaston Berger, je suis passionné par la création de contenus visuels et la stratégie digitale. Expérimenté en radio, infographie, montage audiovisuel et gestion de campagnes, je transforme les idées en projets concrets.
+        </p>
+        <p>
+          Curieux et rigoureux, je développe des solutions créatives pour captiver, inspirer et mobiliser les audiences. Mon objectif est d'allier esthétique, innovation et efficacité dans chaque projet.
+        </p>
+        <p>
+          En parallèle, j'explore les tendances numériques et le storytelling pour créer des expériences immersives. Enthousiaste et polyvalent, je cherche à collaborer avec des équipes dynamiques pour faire grandir des projets inspirants.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">Compétences clés en communication et digital</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">📰</div>
+        <h3>Stratégie & relations presse</h3>
+        <p>Développement de stratégies de communication et gestion des relations presse</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎨</div>
+        <h3>Infographie & design visuel</h3>
+        <p>Création de supports visuels percutants avec Adobe Creative Suite</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎥</div>
+        <h3>Production audiovisuelle</h3>
+        <p>Réalisation et montage vidéo pour des contenus engageants</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📱</div>
+        <h3>Communication digitale</h3>
+        <p>Stratégies et mise en œuvre de campagnes digitales efficaces</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <h3>Gestion de campagnes</h3>
+        <p>Planification, exécution et analyse de campagnes de communication</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">✍️</div>
+        <h3>Rédaction & storytelling</h3>
+        <p>Création de contenus engageants et techniques de narration captivante</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works Section -->
+  <section id="works">
+    <h2 class="section-title">Projets et réalisations</h2>
+    <div class="works-grid">
+      <div class="work-card">
+        <img class="work-image" src="https://placehold.co/600x400/1e3a8a/FFFFFF?text=Projet+Communication" alt="Projet de communication digitale - campagne pour une organisation locale" width="600" height="400">
+        <div class="work-content">
+          <h3>Campagne de sensibilisation</h3>
+          <p>Stratégie de communication digitale pour une organisation locale avec augmentation de 40% de l'engagement en ligne.</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <img class="work-image" src="https://placehold.co/600x400/1e3a8a/FFFFFF?text=Projet+Digital" alt="Projet de stratégie digitale - refonte de présence en ligne" width="600" height="400">
+        <div class="work-content">
+          <h3>Refonte de présence digitale</h3>
+          <p>Stratégie complète pour une petite entreprise avec augmentation de 60% de la visibilité en ligne.</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <img class="work-image" src="https://placehold.co/600x400/1e3a8a/FFFFFF?text=Projet+Storytelling" alt="Projet storytelling - série de contenus narratifs" width="600" height="400">
+        <div class="work-content">
+          <h3>Série de contenus narratifs</h3>
+          <p>Création d'une série storytelling pour une marque locale avec augmentation de 75% du temps d'engagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contactez-moi</h2>
+    <div class="contact-card">
+      <form class="contact-form" id="contactForm" netlify>
+        <div>
+          <label for="name" class="visually-hidden">Votre nom</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        </div>
+        <div>
+          <label for="email" class="visually-hidden">Votre email</label>
+          <input type="email" id="email" name="email" placeholder="Votre email" required>
+        </div>
+        <div>
+          <label for="message" class="visually-hidden">Votre message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+      <div class="contact-links">
+        <a href="cv-bachir-drame.pdf" download>
+          <span>Télécharger mon CV</span>
+        </a>
+        <a href="https://www.linkedin.com/in/bachir-drame-86a316306" target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn</span>
+        </a>
+        <a href="mailto:bachirdrame408@gmail.com">
+          <span>bachirdrame408@gmail.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© <script>document.write(new Date().getFullYear())</script> Bachir Dramé – Tous droits réservés.</p>
+</footer>
+
+<script>
+// Menu mobile functionality
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', !isExpanded);
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      // Calculate position considering fixed header
+      const headerOffset = 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Animation on scroll
+const animateOnScroll = () => {
+  const elements = document.querySelectorAll('.skill-card, .work-card');
+  
+  elements.forEach(element => {
+    const position = element.getBoundingClientRect();
+    
+    // If element is in viewport
+    if (position.top < window.innerHeight - 100) {
+      element.classList.add('active');
+    }
+  });
+};
+
+// Listen for scroll events
+window.addEventListener('scroll', animateOnScroll);
+// Trigger once on load
+window.addEventListener('load', animateOnScroll);
+
+// Form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    
+    // In a real scenario, you would send this data to a server
+    // For demonstration, we'll just show an alert
+    alert(`Merci ${formData.get('name')} pour votre message! Je vous répondrai dès que possible.`);
+    
+    // Reset form
+    contactForm.reset();
+  });
+}
+</script>
+
+</body>
+</html>      --secondary: #2c3e50;
       --accent: #e74c3c;
       --light: #f6f8fb;
       --dark: #333333;
