@@ -41,14 +41,14 @@
     }
 
     /* Header avec animation de particules */
-    header {
+    .hero-header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: var(--white);
       text-align: center;
-      padding: 100px 20px;
+      padding: 100px 20px 80px;
       position: relative;
       overflow: hidden;
-      min-height: 100vh;
+      min-height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,7 +62,7 @@
       left: 0;
     }
 
-    .header-content {
+    .hero-content {
       position: relative;
       z-index: 2;
     }
@@ -85,18 +85,20 @@
       box-shadow: 0 0 30px rgba(255, 159, 28, 0.5);
     }
 
-    header h1 {
+    .hero-content h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
       font-weight: 700;
       text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      color: var(--white);
     }
 
-    header p {
+    .hero-content p {
       font-size: 1.5rem;
       max-width: 700px;
       margin: 0 auto 30px;
       font-weight: 300;
+      color: var(--white);
     }
 
     .scroll-down {
@@ -655,7 +657,7 @@
 
     /* Responsive Design */
     @media (max-width: 1200px) {
-      header h1 {
+      .hero-content h1 {
         font-size: 3rem;
       }
     }
@@ -674,11 +676,11 @@
         flex-direction: column;
       }
       
-      header h1 {
+      .hero-content h1 {
         font-size: 2.5rem;
       }
       
-      header p {
+      .hero-content p {
         font-size: 1.3rem;
       }
     }
@@ -709,16 +711,16 @@
         margin: 15px 0;
       }
       
-      header {
-        padding: 80px 20px;
+      .hero-header {
+        padding: 80px 20px 60px;
         min-height: auto;
       }
       
-      header h1 {
+      .hero-content h1 {
         font-size: 2.2rem;
       }
       
-      header p {
+      .hero-content p {
         font-size: 1.1rem;
       }
       
@@ -737,11 +739,11 @@
     }
 
     @media (max-width: 576px) {
-      header {
-        padding: 60px 20px;
+      .hero-header {
+        padding: 60px 20px 40px;
       }
       
-      header h1 {
+      .hero-content h1 {
         font-size: 2rem;
       }
       
@@ -762,21 +764,6 @@
   </style>
 </head>
 <body>
-  <!-- Header avec animation de particules -->
-  <header>
-    <div id="particles-js"></div>
-    <div class="container header-content">
-      <div class="header-logo">
-        <img src="monlogo.jpg" alt="Logo de Bachir Dramé">
-      </div>
-      <h1>Bachir Dramé</h1>
-      <p>Étudiant en Communication Multimédia & Technologies Numériques</p>
-    </div>
-    <a href="#about" class="scroll-down">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </header>
-
   <!-- Navigation -->
   <nav>
     <div class="container nav-container">
@@ -793,6 +780,21 @@
       </ul>
     </div>
   </nav>
+
+  <!-- Header avec animation de particules -->
+  <header class="hero-header">
+    <div id="particles-js"></div>
+    <div class="container hero-content">
+      <div class="header-logo">
+        <img src="monlogo.jpg" alt="Logo de Bachir Dramé">
+      </div>
+      <h1>Bachir Dramé</h1>
+      <p>Étudiant en Communication Multimédia & Technologies Numériques</p>
+    </div>
+    <a href="#about" class="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </header>
 
   <!-- About Section -->
   <section id="about">
