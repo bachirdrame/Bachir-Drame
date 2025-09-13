@@ -6,18 +6,20 @@
   <title>Bachir Dramé — Portfolio | Communication Multimédia & Technologies Numériques</title>
   <meta name="description" content="Portfolio de Bachir Dramé, étudiant en communication multimédia et technologies numériques. Découvrez mes compétences et réalisations.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #0A2463;
       --primary-dark: #051336;
       --secondary: #FF9F1C;
+      --accent: #FF6B6B;
       --dark: #1E1E24;
       --light: #F9F9F9;
       --gray: #6b7280;
       --light-gray: #e5e7eb;
       --white: #ffffff;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     * {
@@ -41,14 +43,14 @@
     }
 
     /* Header avec animation de particules */
-    .hero-header {
+    header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: var(--white);
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 100px 20px;
       position: relative;
       overflow: hidden;
-      min-height: 60vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,9 +64,10 @@
       left: 0;
     }
 
-    .hero-content {
+    .header-content {
       position: relative;
       z-index: 2;
+      max-width: 800px;
     }
 
     .header-logo {
@@ -85,20 +88,23 @@
       box-shadow: 0 0 30px rgba(255, 159, 28, 0.5);
     }
 
-    .hero-content h1 {
+    header h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
       font-weight: 700;
       text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-      color: var(--white);
     }
 
-    .hero-content p {
+    header p {
       font-size: 1.5rem;
       max-width: 700px;
       margin: 0 auto 30px;
       font-weight: 300;
-      color: var(--white);
+    }
+
+    .typed-text {
+      color: var(--secondary);
+      font-weight: 500;
     }
 
     .scroll-down {
@@ -125,6 +131,7 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(10px);
+      transition: var(--transition);
     }
 
     .nav-container {
@@ -180,8 +187,13 @@
       transition: var(--transition);
     }
 
-    .nav-links a:hover::after {
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
       width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
     }
 
     .menu-toggle {
@@ -220,7 +232,7 @@
       transform: translateX(-50%);
       width: 80px;
       height: 4px;
-      background-color: var(--secondary);
+      background: linear-gradient(to right, var(--secondary), var(--accent));
       border-radius: 2px;
     }
 
@@ -313,7 +325,7 @@
       left: 0;
       width: 5px;
       height: 100%;
-      background: var(--secondary);
+      background: linear-gradient(to bottom, var(--secondary), var(--accent));
       transition: var(--transition);
     }
 
@@ -324,7 +336,7 @@
 
     .skill-card:hover::before {
       width: 100%;
-      opacity: 0.1;
+      opacity: 0.05;
     }
 
     .skill-card i {
@@ -348,6 +360,75 @@
       z-index: 1;
     }
 
+    /* Experience Section */
+    .experience-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .experience-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: var(--secondary);
+    }
+
+    .timeline-item {
+      display: flex;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) {
+      justify-content: flex-start;
+      padding-right: 50%;
+    }
+
+    .timeline-item:nth-child(even) {
+      justify-content: flex-end;
+      padding-left: 50%;
+    }
+
+    .timeline-content {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .timeline-content h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .timeline-content h4 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .timeline-content p {
+      color: var(--gray);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 25px;
+      width: 20px;
+      height: 20px;
+      background: var(--secondary);
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
     /* Projects Section */
     .projects-grid {
       display: grid;
@@ -366,7 +447,7 @@
 
     .project-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
 
     .project-image {
@@ -393,6 +474,23 @@
 
     .project-content p {
       color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project-tag {
+      background: rgba(10, 36, 99, 0.1);
+      color: var(--primary);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
     }
 
     /* Websites Section */
@@ -538,7 +636,7 @@
     }
 
     .submit-btn {
-      background: var(--primary);
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
       color: white;
       border: none;
       padding: 15px 30px;
@@ -549,6 +647,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: 100%;
     }
 
     .submit-btn i {
@@ -556,7 +655,6 @@
     }
 
     .submit-btn:hover {
-      background: var(--primary-dark);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(10, 36, 99, 0.3);
     }
@@ -657,7 +755,7 @@
 
     /* Responsive Design */
     @media (max-width: 1200px) {
-      .hero-content h1 {
+      header h1 {
         font-size: 3rem;
       }
     }
@@ -676,11 +774,25 @@
         flex-direction: column;
       }
       
-      .hero-content h1 {
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        padding: 0;
+        justify-content: flex-start;
+      }
+      
+      .experience-timeline::before {
+        left: 20px;
+      }
+      
+      .timeline-dot {
+        left: 20px;
+      }
+      
+      header h1 {
         font-size: 2.5rem;
       }
       
-      .hero-content p {
+      header p {
         font-size: 1.3rem;
       }
     }
@@ -711,16 +823,16 @@
         margin: 15px 0;
       }
       
-      .hero-header {
-        padding: 80px 20px 60px;
+      header {
+        padding: 80px 20px;
         min-height: auto;
       }
       
-      .hero-content h1 {
+      header h1 {
         font-size: 2.2rem;
       }
       
-      .hero-content p {
+      header p {
         font-size: 1.1rem;
       }
       
@@ -739,11 +851,11 @@
     }
 
     @media (max-width: 576px) {
-      .hero-header {
-        padding: 60px 20px 40px;
+      header {
+        padding: 60px 20px;
       }
       
-      .hero-content h1 {
+      header h1 {
         font-size: 2rem;
       }
       
@@ -764,6 +876,22 @@
   </style>
 </head>
 <body>
+  <!-- Header avec animation de particules -->
+  <header>
+    <div id="particles-js"></div>
+    <div class="container header-content">
+      <div class="header-logo">
+        <img src="monlogo.jpg" alt="Logo de Bachir Dramé">
+      </div>
+      <h1>Bachir Dramé</h1>
+      <p>Étudiant en <span class="typed-text">Communication Multimédia</span> & Technologies Numériques</p>
+      <a href="#contact" class="btn">Me contacter</a>
+    </div>
+    <a href="#about" class="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </header>
+
   <!-- Navigation -->
   <nav>
     <div class="container nav-container">
@@ -772,29 +900,14 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul class="nav-links">
-        <li><a href="#about">À propos</a></li>
+        <li><a href="#about" class="active">À propos</a></li>
         <li><a href="#skills">Compétences</a></li>
+        <li><a href="#experience">Expérience</a></li>
         <li><a href="#projects">Réalisations</a></li>
-        <li><a href="#websites">Sites web</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
-
-  <!-- Header avec animation de particules -->
-  <header class="hero-header">
-    <div id="particles-js"></div>
-    <div class="container hero-content">
-      <div class="header-logo">
-        <img src="monlogo.jpg" alt="Logo de Bachir Dramé">
-      </div>
-      <h1>Bachir Dramé</h1>
-      <p>Étudiant en Communication Multimédia & Technologies Numériques</p>
-    </div>
-    <a href="#about" class="scroll-down">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </header>
 
   <!-- About Section -->
   <section id="about">
@@ -812,6 +925,7 @@
           <p>Je suis Bachir Dramé, étudiant en Licence 3 Communication à l'Université Gaston Berger de Saint-Louis. Passionné par la communication digitale et multimédia, je développe aussi des compétences en création de contenus, gestion de projets et webmastering.</p>
           <p>Curieux et rigoureux, je développe des solutions créatives pour captiver, inspirer et mobiliser les audiences. Mon objectif est d'allier esthétique, innovation et efficacité dans chaque projet.</p>
           <p>Enthousiaste et polyvalent, je cherche à collaborer avec des équipes dynamiques pour faire grandir des projets inspirants.</p>
+          <a href="#projects" class="btn">Voir mes projets</a>
         </div>
       </div>
     </div>
@@ -827,28 +941,28 @@
       <div class="skills-grid">
         <div class="skill-card fade-in">
           <i class="fas fa-bullhorn"></i>
-          <h3>Communication digitale et multimédia</h3>
+          <h3>Communication digitale</h3>
           <p>Stratégies et mise en œuvre de campagnes digitales efficaces</p>
         </div>
         <div class="skill-card fade-in">
-          <i class="fas fa-chart-line"></i>
-          <h3>Stratégie de communication</h3>
-          <p>Développement de stratégies de communication adaptées aux objectifs</p>
-        </div>
-        <div class="skill-card fade-in">
           <i class="fas fa-paint-brush"></i>
-          <h3>Création d'affiches</h3>
-          <p>Réalisation de supports visuels avec Illustrator et Photoshop</p>
+          <h3>Design graphique</h3>
+          <p>Création d'affiches, logos et supports visuels avec la suite Adobe</p>
         </div>
         <div class="skill-card fade-in">
-          <i class="fas fa-tasks"></i>
-          <h3>Gestion technique de projets</h3>
-          <p>Planification, exécution et suivi de projets de communication</p>
+          <i class="fas fa-video"></i>
+          <h3>Production audiovisuelle</h3>
+          <p>Montage vidéo, traitement sonore et production multimédia</p>
         </div>
         <div class="skill-card fade-in">
           <i class="fas fa-laptop-code"></i>
           <h3>Webmastering</h3>
-          <p>Création et gestion de sites web, intégration de contenus</p>
+          <p>Création et gestion de sites web avec WordPress et outils de développement</p>
+        </div>
+        <div class="skill-card fade-in">
+          <i class="fas fa-chart-line"></i>
+          <h3>Stratégie de communication</h3>
+          <p>Développement de stratégies adaptées aux objectifs et publics cibles</p>
         </div>
         <div class="skill-card fade-in">
           <i class="fas fa-lightbulb"></i>
@@ -859,12 +973,48 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mon expérience</h2>
+        <p>Parcours professionnel et formations</p>
+      </div>
+      <div class="experience-timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Assistant Monteur & Production</h3>
+            <h4>Kunbi TV | Août 2025 - Présent</h4>
+            <p>Montage de reportages et séquences d'émissions. Assistance à la production et participation aux réunions de rédaction.</p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Stage en production radiophonique</h3>
+            <h4>Bakel FM | Sept-Oct 2024</h4>
+            <p>Reportage sur le terrain, rédaction du journal quotidien, gestion technique et traitement sonore.</p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Licence Communication Multimédia</h3>
+            <h4>Université Gaston Berger | 2022-2025</h4>
+            <p>Formation en communication, technologies numériques et création multimédia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="projects">
     <div class="container">
       <div class="section-title">
         <h2>Mes réalisations</h2>
-        <p>Découvrez une sélection de mes projets en communication visuelle</p>
+        <p>Une sélection de mes projets en communication visuelle et multimédia</p>
       </div>
       <div class="projects-grid">
         <div class="project-card fade-in">
@@ -872,6 +1022,11 @@
           <div class="project-content">
             <h3>Affiche de campagne</h3>
             <p>Affiche de campagne réalisée avec Photoshop pour une organisation locale.</p>
+            <div class="project-tags">
+              <span class="project-tag">Photoshop</span>
+              <span class="project-tag">Design</span>
+            </div>
+            <a href="#" class="btn">Voir le projet</a>
           </div>
         </div>
         <div class="project-card fade-in">
@@ -879,6 +1034,11 @@
           <div class="project-content">
             <h3>Création graphique</h3>
             <p>Création graphique sous Illustrator pour un événement universitaire.</p>
+            <div class="project-tags">
+              <span class="project-tag">Illustrator</span>
+              <span class="project-tag">Design</span>
+            </div>
+            <a href="#" class="btn">Voir le projet</a>
           </div>
         </div>
         <div class="project-card fade-in">
@@ -886,41 +1046,14 @@
           <div class="project-content">
             <h3>Gestion technique</h3>
             <p>Expérience technique à Bakel FM, gestion d'équipements et production radiophonique.</p>
+            <div class="project-tags">
+              <span class="project-tag">Audio</span>
+              <span class="project-tag">Production</span>
+            </div>
+            <a href="#" class="btn">Voir le projet</a>
           </div>
         </div>
-        <div class="project-card fade-in">
-          <img class="project-image" src="monlogo.png" alt="Logo personnalisé de Bachir Dramé">
-          <div class="project-content">
-            <h3>Logo personnel</h3>
-            <p>Logo réalisé dans le cadre d'un projet personnel de branding.</p>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Websites Section -->
-  <section id="websites">
-    <div class="container">
-      <div class="section-title">
-        <h2>Sites web réalisés</h2>
-        <p>Découvrez les sites web que j'ai créés et gérés</p>
-      </div>
-      <div class="websites-list fade-in">
-        <div class="website-item">
-          <i class="fas fa-globe"></i>
-          <a href="https://tonsite1.com" target="_blank">Site de l'Association AEESS</a>
-        </div>
-        <div class="website-item">
-          <i class="fas fa-briefcase"></i>
-          <a href="https://tonsite2.com" target="_blank">Portfolio en ligne</a>
-        </div>
-        <div class="website-item">
-          <i class="fab fa-wordpress"></i>
-          <a href="https://tonsite3.com" target="_blank">Projet WordPress étudiant</a>
-        </div>
-      </div>
-      <p style="text-align: center; margin-top: 30px; color: var(--gray);"><em>(Remplace les liens par tes vraies adresses)</em></p>
     </div>
   </section>
 
@@ -941,13 +1074,17 @@
               <span>drame.bachir@ugb.edu.sn</span>
             </div>
             <div>
+              <i class="fas fa-phone"></i>
+              <span>77 256 97 00</span>
+            </div>
+            <div>
               <i class="fas fa-map-marker-alt"></i>
               <span>Saint-Louis, Sénégal</span>
             </div>
           </div>
         </div>
         <div class="contact-form fade-in">
-          <form id="contact-form">
+          <form id="contactForm">
             <div class="form-group">
               <label for="name">Nom complet</label>
               <input type="text" id="name" name="name" placeholder="Votre nom" required>
@@ -1043,6 +1180,30 @@
       menuToggle.querySelector('i').classList.toggle('fa-times');
     });
 
+    // Navigation active state
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').substring(1) === current) {
+          item.classList.add('active');
+        }
+      });
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -1101,6 +1262,25 @@
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        
+        // In a real scenario, you would send this data to a server
+        // For demonstration, we'll just show an alert
+        alert(`Merci ${name} pour votre message! Je vous répondrai dès que possible à ${email}.`);
+        
+        // Reset form
+        contactForm.reset();
+      });
+    }
   </script>
 </body>
 </html>
