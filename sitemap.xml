@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://drame25.github.io/Bachir-Drame/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://drame25.github.io/Bachir-Drame/#about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drame25.github.io/Bachir-Drame/#skills</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drame25.github.io/Bachir-Drame/#experience</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drame25.github.io/Bachir-Drame/#projects</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drame25.github.io/Bachir-Drame/#contact</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
