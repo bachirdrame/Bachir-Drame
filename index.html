@@ -2,12 +2,12 @@
 <html lang="fr">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KLZJJLCQ');</script>
-<!-- End Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KLZJJLCQ');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="xLA8nyUTC_XxmPdLv4N1ft5kV15XAdx1lpY7YTb6C2U" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -663,6 +663,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-content {
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .social-links {
@@ -719,6 +722,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .back-to-top:hover {
       background: var(--secondary);
       transform: translateY(-5px);
+    }
+
+    /* Styles supplémentaires pour les messages de formulaire */
+    .form-message {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      font-weight: 500;
+    }
+    
+    .form-message.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+    }
+    
+    .form-message.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
+    }
+    
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: #dc3545;
+    }
+    
+    .error-message {
+      color: #dc3545;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      display: none;
+    }
+    
+    .form-group.error .error-message {
+      display: block;
+    }
+    
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    
+    .submit-btn:disabled:hover {
+      transform: none;
+      box-shadow: none;
     }
 
     /* Animations au défilement */
@@ -881,9 +934,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLZJJLCQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLZJJLCQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- Header avec animation de particules -->
   <header>
     <div id="particles-js"></div>
@@ -1095,24 +1148,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="contact-form fade-in">
-          <form id="contactForm">
+          <div id="form-message" class="form-message"></div>
+          <form id="contactForm" method="POST">
             <div class="form-group">
               <label for="name">Nom complet</label>
               <input type="text" id="name" name="name" placeholder="Votre nom" required>
+              <div class="error-message" id="name-error">Veuillez entrer votre nom complet</div>
             </div>
             <div class="form-group">
               <label for="email">Adresse email</label>
               <input type="email" id="email" name="email" placeholder="Votre email" required>
+              <div class="error-message" id="email-error">Veuillez entrer une adresse email valide</div>
             </div>
             <div class="form-group">
               <label for="subject">Sujet</label>
               <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" required>
+              <div class="error-message" id="subject-error">Veuillez entrer un sujet</div>
             </div>
             <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+              <div class="error-message" id="message-error">Veuillez entrer votre message</div>
             </div>
-            <button type="submit" class="submit-btn">Envoyer <i class="fas fa-paper-plane"></i></button>
+            <button type="submit" class="submit-btn" id="submit-btn">Envoyer <i class="fas fa-paper-plane"></i></button>
           </form>
         </div>
       </div>
@@ -1138,7 +1196,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
+    // Initialisation d'EmailJS avec votre Public Key
+    (function() {
+      emailjs.init("OPDZ0-rothKUDFabZ");
+    })();
+    
     // Initialisation des particules
     document.addEventListener('DOMContentLoaded', function() {
       particlesJS('particles-js', {
@@ -1269,27 +1334,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
     
-    backToTopButton.addEventListener('click', (e) => {
+    backToTopButton.addEventListener('click', (e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Form submission
+    // Form submission avec EmailJS
     const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('form-message');
+    const submitBtn = document.getElementById('submit-btn');
+    
     if (contactForm) {
+      // Fonction de validation
+      function validateField(field, errorId, validationFn) {
+        const value = field.value.trim();
+        const errorElement = document.getElementById(errorId);
+        const formGroup = field.closest('.form-group');
+        
+        if (!validationFn(value)) {
+          formGroup.classList.add('error');
+          return false;
+        } else {
+          formGroup.classList.remove('error');
+          return true;
+        }
+      }
+      
+      // Règles de validation
+      function validateName(name) {
+        return name.length >= 2;
+      }
+      
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+      
+      function validateSubject(subject) {
+        return subject.length >= 3;
+      }
+      
+      function validateMessage(message) {
+        return message.length >= 10;
+      }
+      
+      // Événements de validation en temps réel
+      document.getElementById('name').addEventListener('blur', function() {
+        validateField(this, 'name-error', validateName);
+      });
+      
+      document.getElementById('email').addEventListener('blur', function() {
+        validateField(this, 'email-error', validateEmail);
+      });
+      
+      document.getElementById('subject').addEventListener('blur', function() {
+        validateField(this, 'subject-error', validateSubject);
+      });
+      
+      document.getElementById('message').addEventListener('blur', function() {
+        validateField(this, 'message-error', validateMessage);
+      });
+      
+      // Soumission du formulaire
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        // Valider tous les champs
+        const isNameValid = validateField(document.getElementById('name'), 'name-error', validateName);
+        const isEmailValid = validateField(document.getElementById('email'), 'email-error', validateEmail);
+        const isSubjectValid = validateField(document.getElementById('subject'), 'subject-error', validateSubject);
+        const isMessageValid = validateField(document.getElementById('message'), 'message-error', validateMessage);
         
-        // In a real scenario, you would send this data to a server
-        // For demonstration, we'll just show an alert
-        alert(`Merci ${name} pour votre message! Je vous répondrai dès que possible à ${email}.`);
-        
-        // Reset form
-        contactForm.reset();
+        if (isNameValid && isEmailValid && isSubjectValid && isMessageValid) {
+          // Désactiver le bouton pour éviter les envois multiples
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Envoi en cours... <i class="fas fa-spinner fa-spin"></i>';
+          
+          // Récupérer les données du formulaire
+          const formData = new FormData(contactForm);
+          const templateParams = {
+            from_name: formData.get('name'),
+            from_email: formData.get('email'),
+            subject: formData.get('subject'),
+            message: formData.get('message')
+          };
+          
+          // Envoyer l'email via EmailJS
+          emailjs.send('service_1owdvqk', 'template_lr690kj', templateParams)
+            .then(function(response) {
+              // Afficher message de succès
+              formMessage.textContent = 'Votre message a été envoyé avec succès! Je vous répondrai dès que possible.';
+              formMessage.classList.remove('error');
+              formMessage.classList.add('success');
+              
+              // Réinitialiser le formulaire
+              contactForm.reset();
+              
+              // Cacher le message après 5 secondes
+              setTimeout(function() {
+                formMessage.classList.remove('success');
+              }, 5000);
+            }, function(error) {
+              // Afficher message d'erreur
+              formMessage.textContent = "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer ou me contacter directement par email.";
+              formMessage.classList.remove('success');
+              formMessage.classList.add('error');
+            })
+            .finally(function() {
+              // Réactiver le bouton
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = 'Envoyer <i class="fas fa-paper-plane"></i>';
+            });
+        } else {
+          // Afficher message d'erreur
+          formMessage.textContent = 'Veuillez corriger les erreurs dans le formulaire.';
+          formMessage.classList.remove('success');
+          formMessage.classList.add('error');
+        }
       });
     }
   </script>
