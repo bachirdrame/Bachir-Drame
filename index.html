@@ -987,7 +987,7 @@
         <div class="about-text">
           <h3>Qui suis-je ?</h3>
           <p>Je suis Bachir Dramé, étudiant en Licence 3 Communication à l'Université Gaston Berger de Saint-Louis. Passionné par la communication digitale et multimédia, je développe aussi des compétences en création de contenus, gestion de projets et webmastering.</p>
-          <p>Curieux et rigoureux, je développe des solutions créatives pour captiver, inspirer et mobiliser les audiences. Mon objectif est d'allier esthétique, innovation et efficacité dans chaque projet.</p>
+          <p>Curieux et rigoureux, je développe des solutions créatives pour captiver, inspirer et mobiliser les audiences. Mon objective est d'allier esthétique, innovation et efficacité dans chaque projet.</p>
           <p>Enthousiaste et polyvalent, je cherche à collaborer avec des équipes dynamiques pour faire grandir des projets inspirants.</p>
           <a href="#projects" class="btn">Voir mes projets</a>
         </div>
@@ -1334,7 +1334,7 @@
       }
     });
     
-    backToTopButton.addEventListener('click', (e) {
+    backToTopButton.addEventListener('click', (e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -1412,11 +1412,14 @@
           
           // Récupérer les données du formulaire
           const formData = new FormData(contactForm);
+          
+          // Créer les paramètres selon le format requis par votre template
           const templateParams = {
-            from_name: formData.get('name'),
-            from_email: formData.get('email'),
+            name: formData.get('name'),
+            email: formData.get('email'),
             subject: formData.get('subject'),
-            message: formData.get('message')
+            message: formData.get('message'),
+            time: new Date().toLocaleString('fr-FR') // Ajout de l'heure actuelle
           };
           
           // Envoyer l'email via EmailJS
